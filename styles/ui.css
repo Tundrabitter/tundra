@@ -1,0 +1,451 @@
+.mute-button {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  z-index: 3;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mute-button:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.mute-button:active {
+  transform: scale(0.97);
+}
+
+.mute-button[data-muted='true'] {
+  color: #e85a4f;
+}
+
+.mute-icon {
+  display: block;
+}
+
+.mute-waves,
+.mute-slash {
+  transition: opacity 0.2s ease;
+}
+
+.mute-button[data-muted='false'] .mute-slash {
+  opacity: 0;
+}
+
+.mute-button[data-muted='true'] .mute-waves {
+  opacity: 0;
+}
+
+.mute-label {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
+
+.achievements-button {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  padding: 12px 24px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 3;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.achievements-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.achievements-button:active {
+  transform: scale(0.97);
+}
+
+.achievements-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+}
+
+.achievements-overlay[data-open='true'] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.achievements-modal {
+  width: min(92vw, 640px);
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 32px;
+  border-radius: 24px;
+  background: rgba(245, 248, 252, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  color: #1a2028;
+  transform: translateY(8px);
+  transition: transform 0.3s ease-out;
+}
+
+.achievements-overlay[data-open='true'] .achievements-modal {
+  transform: translateY(0);
+}
+
+.achievements-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.achievements-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  color: #1a2028;
+}
+
+.achievements-counter {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.55);
+  margin-right: auto;
+}
+
+.achievements-close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: #1a2028;
+  transition: background 0.2s ease;
+}
+
+.achievements-close:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.achievement-card {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.achievement-card[data-unlocked='true'] {
+  background: rgba(91, 168, 232, 0.15);
+  border-color: rgba(91, 168, 232, 0.4);
+}
+
+.achievement-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.achievement-card-name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #1a2028;
+}
+
+.achievement-card-status {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.achievement-card[data-unlocked='true'] .achievement-card-status {
+  color: #3a7bc4;
+}
+
+.achievement-card-hint {
+  margin: 10px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.toast-container {
+  position: fixed;
+  top: 96px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.achievement-toast {
+  width: min(90vw, 360px);
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: rgba(245, 248, 252, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  color: #1a2028;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.achievement-toast[data-visible='true'] {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.achievement-toast-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3a7bc4;
+  margin-bottom: 6px;
+}
+
+.achievement-toast-name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #1a2028;
+  margin-bottom: 8px;
+}
+
+.achievement-toast-fact {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.controls {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: min(92vw, 560px);
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.controls-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.control-button {
+  padding: 12px 24px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s ease, transform 0.1s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.control-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.control-button:active {
+  transform: scale(0.97);
+}
+
+.control-button-accent {
+  background: rgba(91, 168, 232, 0.25);
+  border: 1px solid rgba(91, 168, 232, 0.5);
+}
+
+.control-button-accent:hover {
+  background: rgba(91, 168, 232, 0.35);
+}
+
+.thermometer {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.thermometer-fill {
+  height: 100%;
+  width: 100%;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #4A8CC8 0%,
+    #5BAE8E 35%,
+    #E8A84F 70%,
+    #E85A4F 100%
+  );
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.8s ease;
+}
+
+.mute-button.mute-button-inviting {
+  animation: mute-invite 0.3s ease-in-out infinite;
+}
+
+.mute-button.mute-button-shaking {
+  animation: mute-shake 0.2s ease-in-out;
+}
+
+.temperature-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .temperature-display {
+    font-size: 56px;
+  }
+
+  .controls {
+    width: min(96vw, 640px);
+    padding: 20px;
+  }
+
+  .control-button {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .temperature-display {
+    font-size: 48px;
+  }
+
+  .controls {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: none;
+    padding: 20px 16px 24px;
+    border-radius: 24px 24px 0 0;
+    border-bottom: none;
+  }
+
+  .controls-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .control-button {
+    width: 100%;
+  }
+
+  .mute-button {
+    top: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .mute-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .mute-label {
+    font-size: 10px;
+  }
+
+  .achievements-button {
+    bottom: 260px;
+    right: 16px;
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .toast-container {
+    top: 80px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .achievement-toast {
+    width: 100%;
+  }
+
+  .achievements-modal {
+    width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+    padding: 24px 20px;
+  }
+}

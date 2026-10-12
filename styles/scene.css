@@ -1,0 +1,212 @@
+[data-scene='root'] {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+:where([data-scene='root']) > [data-layer] {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+[data-layer='sky'] {
+  background: linear-gradient(
+    to bottom,
+    var(--sky-top),
+    var(--sky-bottom)
+  );
+  transition: background 1.5s ease-in-out;
+}
+
+[data-layer='ground'] {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 30%;
+  background: var(--ground);
+  transition: background 1s ease-in-out;
+}
+
+[data-layer='farMountains'] {
+  top: auto;
+  right: 0;
+  bottom: 30%;
+  left: 0;
+  height: 35%;
+}
+
+[data-layer='nearMountains'] {
+  top: auto;
+  right: 0;
+  bottom: 30%;
+  left: 0;
+  height: 25%;
+}
+
+[data-layer='farMountains'] svg,
+[data-layer='nearMountains'] svg,
+[data-layer='farForest'] svg,
+[data-layer='vegetation'] svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+[data-layer='farMountains'] polygon {
+  fill: var(--far-mountains);
+  transition: fill 1.2s ease-in-out;
+}
+
+[data-layer='nearMountains'] polygon {
+  fill: var(--near-mountains);
+  transition: fill 1.2s ease-in-out;
+}
+
+[data-layer='farForest'] {
+  top: auto;
+  right: 0;
+  bottom: 30%;
+  left: 0;
+  height: 10%;
+}
+
+[data-layer='vegetation'] {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 30%;
+}
+
+[data-layer='farForest'] path {
+  fill: var(--midground);
+  transition: fill 1.2s ease-in-out;
+}
+
+[data-layer='vegetation'] [data-role='moss'] ellipse {
+  fill: var(--midground);
+  transition: fill 1.2s ease-in-out;
+}
+
+[data-layer='vegetation'] [data-role='accent'] circle {
+  fill: var(--accent);
+  transition: fill 1.2s ease-in-out;
+}
+[data-layer='animals'] [data-animal-id] {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.6s ease-in;
+  pointer-events: none;
+}
+
+[data-layer='animals'] [data-animal-id][data-visible='true'] {
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+}
+
+[data-layer='animals'] [data-animal-id='reindeer'] {
+  bottom: 3%;
+  left: 8%;
+  width: min(18vw, 220px);
+}
+
+[data-layer='animals'] [data-animal-id='bees'] {
+  bottom: 35%;
+  right: 12%;
+  width: min(12vw, 140px);
+}
+
+[data-layer='animals'] svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+[data-layer='animals'] [data-animal-id] {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.6s ease-in;
+  pointer-events: none;
+}
+
+[data-layer='animals'] [data-animal-id][data-visible='true'] {
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+}
+
+[data-layer='animals'] [data-animal-id='reindeer'] {
+  bottom: 3%;
+  left: 8%;
+  width: min(18vw, 220px);
+}
+
+[data-layer='animals'] [data-animal-id='fawn'] {
+  bottom: 22%;
+  left: 48%;
+  width: min(9vw, 120px);
+}
+
+[data-layer='animals'] [data-animal-id='fawn'][data-visible='true'] {
+  opacity: 0.9;
+}
+
+[data-layer='animals'] [data-animal-id='bees'] {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+[data-layer='animals'] [data-animal-id='cornerBee'] {
+  bottom: 30%;
+  right: 20%;
+  width: 32px;
+  height: 26px;
+}
+
+[data-layer='animals'] [data-animal-id='cornerBee'][data-visible='true'] {
+  animation: corner-bee-flight 10s ease-in-out infinite;
+}
+
+[data-layer='animals'] svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.swarm-bee {
+  position: absolute;
+  pointer-events: none;
+}
+
+.swarm-bee svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.button-bee {
+  position: absolute;
+  top: -10px;
+  right: -6px;
+  width: 24px;
+  height: 20px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease-in;
+  animation: bee-bob 1.6s ease-in-out infinite;
+}
+
+.button-bee[data-visible='true'] {
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+}
+
+[data-effect='overlay'] {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  will-change: opacity, clip-path, transform;
+}

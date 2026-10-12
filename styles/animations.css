@@ -1,0 +1,54 @@
+@keyframes bee-drift-a {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(6px, -8px); }
+  50% { transform: translate(-4px, -14px); }
+  75% { transform: translate(-8px, 3px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes bee-drift-b {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-6px, 5px); }
+  50% { transform: translate(5px, -10px); }
+  75% { transform: translate(8px, 6px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes bee-drift-c {
+  0% { transform: translate(0, 0); }
+  33% { transform: translate(10px, -5px); }
+  66% { transform: translate(-5px, 8px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes bee-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes corner-bee-flight {
+  0% { transform: translate(0, 0); }
+  5% { transform: translate(1vw, -3vh); }
+  25% { transform: translate(6vw, -25vh); }
+  45% { transform: translate(13vw, -55vh); }
+  50% { transform: translate(15vw, -65vh); }
+  70% { transform: translate(15vw, -65vh); }
+  90% { transform: translate(4vw, -15vh); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes mute-invite {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(5deg); }
+  75%  { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes mute-shake {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(8deg); }
+  40%  { transform: rotate(-8deg); }
+  60%  { transform: rotate(6deg); }
+  80%  { transform: rotate(-6deg); }
+  100% { transform: rotate(0deg); }
+}
