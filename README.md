@@ -9,18 +9,18 @@ SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&
 
 **Демо:** https://tundrabitter.github.io/tundra/ 
 ```
-         🤍
-       🤍🤍🤍
-      🤍🤍🤍🤍
-     🤍🟢🪽🟢🤍
-    🤍🟢🟢🟢🟢🤍
+       🤍
+     🤍🤍🤍
+     🤍🤍🤍🤍
+      🤍🟢🪽🟢🤍
+     🤍🟢🟢🟢🟢🤍
       🟢🟢🟢🟢
      🤍🟢🟢🟢🤍
     🟢🟢🟢🟢🟢🟢
    🤍🟢🟢🟢🟢🟢🤍
    🟢🟢🟢🟢🟢🟢🟢
-       🟤🟤🟤
-       🟤🟤🟤
+      🟤🟤🟤
+      🟤🟤🟤
 ```
 ## Что ?!
 
